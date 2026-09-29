@@ -1,14 +1,12 @@
-package com.tutorials.tuts.controllers;
+package com.tutorials.tuts.dice;
 
-import com.tutorials.tuts.dice.DiceController;
-import com.tutorials.tuts.dice.RollRequest;
-import com.tutorials.tuts.dice.RollResponse;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DiceControllerTest {
-    DiceController diceController = new DiceController();
+    DiceParser diceParser;
+    DiceController diceController = new DiceController(diceParser);
 
     @Test
     void rollDice() {
