@@ -1,7 +1,8 @@
 package com.tutorials.tuts.controllers;
 
-import com.tutorials.tuts.data.DiceExpression;
-import com.tutorials.tuts.responses.RollDiceResponse;
+import com.tutorials.tuts.dice.DiceController;
+import com.tutorials.tuts.dice.RollRequest;
+import com.tutorials.tuts.dice.RollResponse;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,9 +12,9 @@ class DiceControllerTest {
 
     @Test
     void rollDice() {
-        DiceExpression diceExpression = new DiceExpression("3d2");
-        RollDiceResponse response = diceController.rollDice(diceExpression);
-        assertEquals(diceExpression.expression(), response.expression());
+        RollRequest rollRequest = new RollRequest("3d2");
+        RollResponse response = diceController.rollDice(rollRequest);
+        assertEquals(rollRequest.expression(), response.expression());
         assertEquals(0, response.total());
     }
 }
